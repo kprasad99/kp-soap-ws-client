@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://swasthik.kp.com/ws/" xmlns:tns1="http://swasthik.kp.com/ws/schema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="hello-world" targetNamespace="http://swasthik.kp.com/ws/">
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import schemaLocation="hello-world.xsd"
+				namespace="http://swasthik.kp.com/ws/schema" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="hello-response">
+		<wsdl:part element="tns1:result" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="hello-request">
+		<wsdl:part element="tns1:name" name="parameters" />
+	</wsdl:message>
+	<wsdl:portType name="hello-world">
+		<wsdl:operation name="say-hello">
+			<wsdl:input message="tns:hello-request" />
+			<wsdl:output message="tns:hello-response" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="hello-worldSOAP" type="tns:hello-world">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="say-hello">
+			<soap:operation soapAction="http://swasthik.kp.com/ws/say-hello" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="hello-world">
+		<wsdl:port binding="tns:hello-worldSOAP" name="hello-worldSOAP">
+			<soap:address location="http://swasthik.kp.com/ws/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

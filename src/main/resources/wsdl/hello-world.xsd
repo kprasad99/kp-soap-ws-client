@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://swasthik.kp.com/ws/schema"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://swasthik.kp.com/ws/schema">
+
+	<element name="result" type="string"></element>
+	<element name="name" type="string"></element>
+
+</schema>
