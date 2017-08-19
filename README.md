@@ -1,5 +1,5 @@
-# kp-soap-ws-server
-Demo Project For spring-boot with cxf jaxws server
+# kp-soap-ws-client
+Demo Project For spring-boot with cxf jaxws client
 
 ### Running the Demo Project
 
