@@ -61,6 +61,7 @@
 							<wsdlOptions>
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/wsdl/hello-world.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/hello-world.wsdl</wsdlLocation>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
